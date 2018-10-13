@@ -20,7 +20,7 @@
   become: true
   command: python3 {{ pwd_result.stdout }}/get-pip.py
 
-- name: Remove temporary download directory, if it didn't prevously exist
+- name: Remove temporary download directory, if it didn't previously exist
   file: name={{ download_dir }} state=absent
   when: tmp.stat.exists == false
 
@@ -53,4 +53,3 @@
 
 - name: Install numpy
   command: "{{ virtualenv_home }}/{{ virtualenv_name}}/bin/pip install numpy"
-

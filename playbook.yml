@@ -2,15 +2,14 @@
 - hosts: all
   vars:
     download_dir: ~/downloads
-    opencv_version: 3.1.0
+    opencv_version: 3.4.1
     virtualenv_home: ~/.virtualenvs
     virtualenv_name: cv
-    num_processors: 2
+    num_processors: 1
   environment:
     VIRTUALENVWRAPPER_PYTHON: /usr/bin/python3
     WORKON_HOME: "{{ virtualenv_home }}"
   roles:
-    - upgrade 
+    - upgrade
     - python
     - opencv
-
